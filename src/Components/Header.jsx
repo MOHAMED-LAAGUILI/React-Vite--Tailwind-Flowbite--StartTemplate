@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
-import { FaAlignLeft, FaAngleDoubleLeft } from "react-icons/fa";
+import { FaAlignLeft, FaAngleDoubleLeft, FaBell, FaConnectdevelop } from "react-icons/fa";
 import logo from "../assets/svg/react-logo-programming-svgrepo-com.svg";
 import profile_img from "../assets/image/Profile-IMG-Tooned.jpg";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuMoonStar } from "react-icons/lu";
+import { FaCircleCheck, FaRegMessage, FaVialCircleCheck } from "react-icons/fa6";
 function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -37,7 +38,7 @@ function Header() {
     { href: "/dashboard", label: "Dashboard" },
     { href: "/settings", label: "Settings" },
     { href: "/earnings", label: "Earnings" },
-    { href: "/signout", label: "Sign out" },
+    { href: "/auth", label: "Auth" },
   ];
   return (
     <>
@@ -70,21 +71,28 @@ function Header() {
               </a>
             </div>
             <div className="flex items-center">
-              <button
-                onClick={toggleTheme}
+            <button 
+            onClick={toggleTheme}
                 className="p-2 text-sm text-gray-500 rounded-full hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
               >
                 {isDarkMode ? (
                   <>
                     {" "}
-                    <IoSunnyOutline  className="w-7 h-7 border-gray-300 rounded-full shadow" />{" "}
+                    <IoSunnyOutline  className="w-7 h-7 border-gray-300 rounded-full shadow  dark:text-white" />{" "}
                   </>
                 ) : (
                   <>
                     {" "}
-                    <LuMoonStar  className="w-7 h-7  border-gray-300  rounded-full shadow" />{" "}
+                    <LuMoonStar  className="w-7 h-7  border-gray-300  rounded-full shadow text-black" />{" "}
                   </>
                 )}
+              </button>
+              <button className="mx-3">
+                <FaBell className="w-6 h-6   dark:text-white"/>
+              </button>
+            
+              <button className="mx-3">
+                <FaRegMessage className="w-6 h-6  dark:text-white "/>
               </button>
               <div className="flex items-center ms-3">
                 <div>
@@ -111,13 +119,14 @@ function Header() {
                       className="text-sm text-gray-900 dark:text-white"
                       role="none"
                     >
-                      Neil Sims
+<p className="flex items-center font-semibold text-gray-900 dark:text-white"> 
+   {`Mohamed LAAGUILI `} <FaCircleCheck/></p>
                     </p>
                     <p
                       className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                       role="none"
                     >
-                      neil.sims@flowbite.com
+                      mohamed.lg@gmail.com
                     </p>
                   </div>
                   <ul className="py-1" role="none">
